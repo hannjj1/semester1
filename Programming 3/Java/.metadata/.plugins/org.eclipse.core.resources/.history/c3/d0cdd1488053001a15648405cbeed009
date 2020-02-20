@@ -1,0 +1,29 @@
+package psalary;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class SalaryTest {
+
+	@Test
+	void testGetGross() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testSetGross() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testGetTax() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testGetNet() {
+		fail("Not yet implemented");
+	}
+
+}

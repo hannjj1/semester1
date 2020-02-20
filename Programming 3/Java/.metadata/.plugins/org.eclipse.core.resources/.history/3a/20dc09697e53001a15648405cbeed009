@@ -1,0 +1,18 @@
+package psalary;
+
+public class Salary {
+
+	private double gross;
+
+	public Salary(double gross) {
+		
+		public static double getGross() {
+			
+		}
+		
+		public viud setgross() {
+			
+		}
+		
+	}
+}

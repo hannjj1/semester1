@@ -1,0 +1,26 @@
+package psalary;
+
+public class Salary {
+
+	private double gross;
+
+	public Salary(double gross) {
+		
+		public double getGross() {
+			
+		}
+		
+		public void setGross(double gross) {
+			
+		}
+		
+		public double getTax() {
+			
+		}
+		
+		public double getNet() {
+			
+		}
+		
+	}
+}

@@ -1,0 +1,22 @@
+package pbankaccounts;
+
+public class BankAccounts {
+
+	private int balance;
+	
+	public void BankAccount() {
+		
+		public int getBalance() {
+			return balance;
+		}
+		
+		public void deposit(int i) {
+			
+		}
+		
+		public void withdraw(int i) {
+			
+		}
+	}
+
+}

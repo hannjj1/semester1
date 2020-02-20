@@ -1,0 +1,24 @@
+package pbankaccounts;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class BankAccountsTest {
+
+	@Test
+	void testGetBalance() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testDeposit() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testWithdraw() {
+		fail("Not yet implemented");
+	}
+
+}

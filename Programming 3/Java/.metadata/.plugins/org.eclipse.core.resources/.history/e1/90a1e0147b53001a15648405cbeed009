@@ -1,0 +1,25 @@
+package pbankaccounts;
+
+public class BankAccounts {
+
+	private double balance;
+	
+	public BankAccounts() {
+		balance = 0;
+	}
+	
+	public double getBalance() {
+		return balance;
+	}
+	
+	public void deposit(double i) {
+		balance += i;
+	}
+	
+	public void withdraw(double i) {
+		balance -= i;
+		if (balance < 0) {
+			balance -= 5;
+		}
+	}
+}

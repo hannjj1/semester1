@@ -1,0 +1,14 @@
+package psalary;
+
+public class Salary {
+
+	private double gross;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		public Salary() {
+			
+		}
+	}
+
+}

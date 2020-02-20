@@ -1,0 +1,10 @@
+package psalary;
+
+public class Salary {
+
+	private double gross;
+
+	public Salary(double gross) {
+		
+	}
+}
