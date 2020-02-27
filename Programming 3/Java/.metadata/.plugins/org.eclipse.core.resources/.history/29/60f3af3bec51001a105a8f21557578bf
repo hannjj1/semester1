@@ -1,9 +1,0 @@
-package pnameinstars;
-
-public class NameInStars {
-	private String name;
-	
-	public surroundNameInStars() {
-		
-	}
-}
