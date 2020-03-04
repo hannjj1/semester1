@@ -45,12 +45,7 @@ public class TempConverterApp {
 	}
 	
 	public String toString() {
-		return "";
+		StringBuilder temp = new StringBuilder(cel + "C converts to " + fah + "F and " + kel + "K");
+		return temp;
 	}
-	
-//	public static void main(String[] args) {
-//		// TODO Auto-generated method stub
-//
-//	}
-
 }
