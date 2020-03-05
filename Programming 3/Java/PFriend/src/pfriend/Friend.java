@@ -133,6 +133,6 @@ public class Friend {
 		else if (gender == null || homeTown == null || email == null || relationshipStatus == null) {
 
 		}
-		return buffer;
+//		return buffer;
 	}
 }

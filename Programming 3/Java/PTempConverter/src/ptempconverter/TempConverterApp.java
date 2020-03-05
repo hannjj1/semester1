@@ -43,7 +43,6 @@ public class TempConverterApp {
 	}
 
 	public String toString() {
-//		StringBuilder temp = new StringBuilder(cel + "C converts to " + fah + "F and " + kel + "K");
 		return "Celsius: " + cel + " | Fahrenheit: " + fah + " | Kelvin: " + kel;
 	}
 }

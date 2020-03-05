@@ -6,6 +6,29 @@ import org.junit.jupiter.api.Test;
 
 class TempConverterAppTest {
 
+//My Tests
+	@Test
+	public void testSetCel100() {
+		TempConverterApp con = new TempConverterApp(100);
+		con.setCel(100);
+		assertEquals(100, con.getCel(), 0.01);
+	}
+
+	@Test
+	public void testSetKel0() {
+		TempConverterApp con = new TempConverterApp(0);
+		con.setKel(0);
+		assertEquals(-273.15, con.getCel(), 0.01);
+	}
+	
+	@Test
+	public void testSetFah500() {
+		TempConverterApp con = new TempConverterApp(500);
+		con.setFah(500);
+		assertEquals(260, con.getCel(), 0.01);
+	}
+	
+//Dale's Tests
 	@Test
 	public void testGetCel2() {
 		TempConverterApp con = new TempConverterApp(32);
