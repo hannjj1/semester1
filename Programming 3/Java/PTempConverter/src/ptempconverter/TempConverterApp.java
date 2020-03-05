@@ -1,51 +1,48 @@
 package ptempconverter;
 
 public class TempConverterApp {
-	
+
 	private double cel;
 	private double fah;
 	private double kel;
-	
-	
+
 	public TempConverterApp(double celsius) {
-		cel = celsius;
+		this.cel = celsius;
+		this.fah = (cel * 9 / 5) + 32;
+		this.kel = cel + 273.15;
 	}
-	
-	public double getCel(){
-		fah = (cel * 9/5) + 32;
-		kel = cel + 273.15;
-		
+
+	public double getCel() {
 		return cel;
 	}
-	
+
 	public double getFah() {
-		cel = (fah - 32) * 5/9;
-		kel = (fah - 32) * 5/9 + 273.15;
-		
 		return fah;
 	}
-	
+
 	public double getKel() {
-		cel = kel - 273.15;
-		fah = (kel - 273.15) * 9/5 + 32;
-		
 		return kel;
 	}
-	
-	public void setCel(double celsius) {
-		cel = celsius;
+
+	public void setCel(double cel) {
+		this.cel = cel;
+		this.fah = (cel * 9 / 5) + 32;
+		this.kel = cel + 273.15;
 	}
-	
-	public void setFah(double fahrenheit) {
-		fah = fahrenheit;
+
+	public void setFah(double fah) {
+		this.fah = fah;
+		this.cel = (fah - 32) * 5 / 9;
+		this.kel = (fah - 32) * 5 / 9 + 273.15;
 	}
-	
-	public void setKel(double kelvin) {
-		kel = kelvin;
+
+	public void setKel(double kel) {
+		this.kel = kel;
+		this.cel = kel - 273.15;
+		this.fah = (kel -273.15) * 9 / 5 + 32;
 	}
-	
+
 	public String toString() {
-		StringBuilder temp = new StringBuilder(cel + "C converts to " + fah + "F and " + kel + "K");
-		return temp;
+		return "Celsius: " + cel + " | Fahrenheit: " + fah + " | Kelvin: " + kel;
 	}
 }
