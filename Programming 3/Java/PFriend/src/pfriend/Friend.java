@@ -65,35 +65,42 @@ public class Friend {
 	}
 
 	public void setFirstName(String firstName) {
-
+		this.firstName = firstName;
 	}
 
 	public void setLastName(String lastName) {
-
+		this.lastName = lastName;
 	}
 
+//DO
 	public boolean isValidName(String firstName) {
-		return false;
+		if (firstName.length() > 1) {
+			return true;
+		}
+		
+		else {
+			return false;
+		}
 	}
 
 	public void setBirthDate(LocalDate birthDate) {
-
+		this.birthDate = birthDate;
 	}
 
-	public void setGender(String gender) {
-
+	public void setGender(Gender gender) {
+		this.gender = gender;
 	}
 
 	public void setHomeTown(String homeTown) {
-
+		this.homeTown = homeTown;
 	}
 
 	public void setEmail(String email) {
-
+		this.email = email;
 	}
 
-	public void setRelationship(Relationship relationshipstatus) {
-
+	public void setRelationship(Relationship relationshipStatus) {
+		this.relationshipStatus = relationshipStatus;
 	}
 
 	public int calcAge() {
@@ -126,13 +133,30 @@ public class Friend {
 	}
 
 	public String toString() {
-		if (birthDate == null) {
-			StringBuilder buffer = new StringBuilder(firstName + " " + lastName);
+
+		String temp = "";
+
+		if (firstName == null || lastName == null) {
+			temp = "";
+//			System.out.println("You cannot enter a friend without a name");
+		}
+
+		else if (birthDate == null) {
+			temp = firstName + " " + lastName;
+//			StringBuilder buffer = new StringBuilder(firstName + " " + lastName);
 		}
 
 		else if (gender == null || homeTown == null || email == null || relationshipStatus == null) {
-
+			temp = firstName + " " + lastName + " " + birthDate;
 		}
-//		return buffer;
+
+		else if (firstName != null && lastName != null && birthDate != null && gender != null && homeTown != null
+				&& email != null && relationshipStatus != null) {
+			temp = firstName + " " + lastName + " " + birthDate + " " + gender + " " + homeTown + " " + email + " "
+					+ relationshipStatus;
+		}
+
+		return temp;
+//		return firstName + " " + lastName;
 	}
 }
