@@ -34,7 +34,7 @@ class FriendTest {
 	
 	@Test
 	void testToStringNoRelationshipStatus() {
-		Friend friend = new Friend("Jacob", "Hannigan", 2000, 12, 22, "MALE", "Dunedin", "jacobhannigan@hotmail.com", SINGLE;
+		Friend friend = new Friend("Jacob", "Hannigan", 2000, 12, 22, Gender.MALE, "Dunedin", "jacobhannigan@hotmail.com", Relationship.SINGLE);
 		assertEquals("Jacob Hannigan 2000-12-22 MALE Dunedin jacobhannigan@hotmail.com SINGLE", friend.toString());
 	}
 	

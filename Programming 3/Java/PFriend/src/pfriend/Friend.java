@@ -103,15 +103,19 @@ public class Friend {
 		this.relationshipStatus = relationshipStatus;
 	}
 
+	public void setDateEntered(LocalDate dateEntered) {
+		this.dateEntered = dateEntered;
+	}
+
 	public int calcAge() {
 
-		int age = (dateEntered.getYear() - birthDate.getYear());
+		int age = dateEntered.getYear() - birthDate.getYear();
 
 		if (dateEntered.getMonthValue() < birthDate.getMonthValue()) {
 			age--;
 		}
 
-		else if (dateEntered.getMonthValue() == birthDate.getMonthValue()) {
+		if (dateEntered.getMonthValue() == birthDate.getMonthValue()) {
 
 			if (dateEntered.getDayOfMonth() < birthDate.getDayOfMonth()) {
 				age--;
