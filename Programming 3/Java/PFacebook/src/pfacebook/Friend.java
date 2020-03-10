@@ -1,4 +1,4 @@
-package pfriend;
+package pfacebook;
 
 import java.time.LocalDate;
 

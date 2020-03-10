@@ -2,67 +2,95 @@ package pfriend;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.LocalDate;
+
 import org.junit.jupiter.api.Test;
 
 class FriendTest {
-
-	@Test
-	void testIsValidNameFalse() {
-//		Friend friend = new Friend("J", "Hannigan");
-//		assertEquals(true, friend.isValidName(friend));
-	}
-
+	private Friend jacob = new Friend("Jacob", "Hannigan", 2000, 12, 22, Gender.MALE, "Dunedin", "jacobhannigan@hotmail.com", Relationship.SINGLE);
+	private Friend bernie = new Friend("Bernie", "Cosgrove", 1991, 8, 21);
+	private Friend amber = new Friend("Amber", "Little");
+	private Friend test = new Friend("J", "J", 1991, 3, 20);
+	
 	@Test
 	void testCalcAge() {
-		Friend friend = new Friend("Jacob", "Hannigan", 2000, 12, 22);
-		assertEquals(19, friend.calcAge());
+		assertEquals(19, jacob.calcAge());
+	}
+	
+	@Test
+	void testCalcAge2() {
+		assertEquals(28, test.calcAge());
 	}
 
 	@Test
 	void testIsTheSameSamePerson() {
-		Friend friend1 = new Friend("Jacob", "Hannigan");
-		Friend friend2 = new Friend("Jacob", "Hannigan");
-		assertEquals(true, friend1.isTheSame(friend2));
+		assertEquals(true, jacob.isTheSame(jacob));
 	}
 
 	@Test
-	void testIsTheSameDifferentPerson() {
-		Friend friend1 = new Friend("Jacob", "Hannigan");
-		Friend friend2 = new Friend("Amber", "Little");
-		assertEquals(false, friend1.isTheSame(friend2));
+	void testIsValidName1() {
+		assertEquals(true, jacob.isValidName(jacob));
+	}
+
+	@Test
+	void testIsValidName2() {
+		assertEquals(false, test.isValidName(test));
+	}
+
+	@Test
+	void testIsTheSame1() {
+		assertEquals(true, jacob.isTheSame(jacob));
+	}
+
+	@Test
+	void testIsTheSame2() {
+		assertEquals(false, bernie.isTheSame(amber));
 	}
 	
 	@Test
-	void testToStringNoRelationshipStatus() {
-		Friend friend = new Friend("Jacob", "Hannigan", 2000, 12, 22, Gender.MALE, "Dunedin", "jacobhannigan@hotmail.com", Relationship.SINGLE);
-		assertEquals("Jacob Hannigan 2000-12-22 MALE Dunedin jacobhannigan@hotmail.com SINGLE", friend.toString());
+	void testToString() {
+		assertEquals("Jacob Hannigan 2000-12-22 MALE Dunedin jacobhannigan@hotmail.com SINGLE", jacob.toString());
 	}
 	
 	@Test
-	void testToStringNoBirthDate() {
-		Friend friend = new Friend("Jacob", "Hannigan", 2000, 12, 22);
-		assertEquals("Jacob Hannigan 2000-12-22", friend.toString());
+	void testToString1() {
+		assertEquals("Bernie Cosgrove 1991-08-21", bernie.toString());
 	}
 	
-	
-//		if (firstName == null || lastName == null) {
-//			temp = "";
-////			System.out.println("You cannot enter a friend without a name");
-//		}
-//
-//		else if (birthDate == null) {
-//			temp = firstName + " " + lastName;
-////			StringBuilder buffer = new StringBuilder(firstName + " " + lastName);
-//		}
-//
-//		else if (gender == null || homeTown == null || email == null || relationshipStatus == null) {
-//			temp = firstName + " " + lastName + " " + birthDate;
-//		}
-//
-//		else if (firstName != null && lastName != null && birthDate != null && gender != null && homeTown != null
-//				&& email != null && relationshipStatus != null) {
-//			temp = firstName + " " + lastName + " " + birthDate + " " + gender + " " + homeTown + " " + email + " "
-//					+ relationshipStatus;
+	@Test
+	void testToString2() {
+		assertEquals("Amber Little", amber.toString());
+	}
 
+	@Test
+	void testGetBirthDate(){
+		LocalDate d1 = LocalDate.of(1991, 8, 21);
+		assertEquals(d1 , bernie.getBirthDate());
+	}
 
+	@Test
+	void testGetDateEntered() {
+		LocalDate d1 = LocalDate.of(2020, 3, 10);
+		assertEquals(d1, bernie.getDateEntered());
+	}
+
+	@Test
+	void testGetGender() {
+		assertEquals(Gender.MALE, jacob.getGender());
+	}
+
+	@Test
+	void testGetEmail() {
+		assertEquals("jacobhannigan@hotmail.com", jacob.getEmail());
+	}
+
+	@Test
+	void testGetHomeTown() {
+		assertEquals("Dunedin", jacob.getHomeTown());
+	}
+
+	@Test
+	void testGetRelationshipStatus() {
+		assertEquals(Relationship.SINGLE, jacob.getRelationshipStatus());
+	}
 }
