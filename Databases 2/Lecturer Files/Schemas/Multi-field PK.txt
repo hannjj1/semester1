@@ -1,0 +1,9 @@
+only way to create a multi-field PK
+
+
+CREATE TABLE eg (
+eg_id INT,
+eg_id2 INT,
+data VARCHAR(100),
+PRIMARY KEY (eg_id, eg_id2)
+)ENGINE=INNODB;
