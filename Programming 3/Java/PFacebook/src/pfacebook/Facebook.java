@@ -31,11 +31,27 @@ public class Facebook {
 	}
 
 	public String lessThan21() {
+		StringBuilder buffer = new StringBuilder();
+		for (Friend item : friendList) {
+			if (item.getBirthDate() != null) {
+				if (item.calcAge() < 21) {
+					buffer.append(buffer + "/n");
+				}
+			}
+		}
 		return "";
 	}
 
 	public void unfriend(Friend friend) {
+		friendList.remove(friend);
+	}
 
+	public String listFriends(Friend friend) {
+
+		for (Friend item : friendList) {
+			System.out.println(item);
+		}
+		return "";
 	}
 
 	public String toString() {

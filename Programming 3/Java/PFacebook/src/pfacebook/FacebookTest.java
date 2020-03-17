@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class FacebookTest {
 
-	Friend friend1 = new Friend("Caleb", "Wind");
+	Friend friend1 = new Friend("Not Caleb", "Wind");
 	Friend friend2 = new Friend("Bernie", "Cosgrove");
 	Friend friend3 = new Friend("Amber", "Little");
 	Friend friend4 = new Friend("Kian", "Potts");

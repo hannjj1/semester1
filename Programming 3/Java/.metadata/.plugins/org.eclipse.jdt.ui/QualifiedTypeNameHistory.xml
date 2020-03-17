@@ -8,4 +8,5 @@
     <fullyQualifiedTypeName name="pfriend.Relationship"/>
     <fullyQualifiedTypeName name="pfriend.Gender"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="pArrayAndListUtilities.ArrayAndListUtilities"/>
 </qualifiedTypeNameHistroy>
