@@ -1,0 +1,43 @@
+JRadioButton rdbtnRain = new JRadioButton("rain");
+
+rdbtnRain.setActionCommand("Rain");
+
+cond.add(rdbtnRain);
+
+panel_2.add(rdbtnRain);
+
+
+
+JRadioButton rdbtnSnow = new JRadioButton("snow");
+
+rdbtnSnow.setActionCommand("Snow");
+
+cond.add(rdbtnSnow);
+
+panel_2.add(rdbtnSnow);
+
+
+
+JTextArea textArea = new JTextArea();
+
+textArea.setBounds(10, 143, 237, 107);
+
+contentPane.add(textArea);
+
+
+
+JButton btnShowConditions = new JButton("Show Conditions");
+
+btnShowConditions.addActionListener(new ActionListener() {
+
+public void actionPerformed(ActionEvent arg0) {
+
+textArea.append("Weather Conditions: " + temp.getSelection().getActionCommand() + ", " 
+
++ humid.getSelection().getActionCommand() + " and " + cond.getSelection().getActionCommand() + "\n");
+
+
+
+}
+
+});
