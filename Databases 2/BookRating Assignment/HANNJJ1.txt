@@ -1,58 +1,107 @@
-Question 1:
-	SELECT title, genre
-	FROM Book
-	WHERE author = "Harper Lee";
+FORMATTING
+.headers on
+.mode column
+.nullvalue NULL
 
+Question 1:
+SELECT title, genre
+FROM Book
+WHERE author = "Harper Lee";
 
 Question 2:
-
-
+SELECT published
+FROM book
+WHERE bID IN
+(SELECT bID
+FROM rating
+WHERE ratings > 3)
+ORDER by published;
 
 Question 3:
-
-
+SELECT name,title
+FROM reviewer 
+JOIN rating ON reviewer.rID=rating.rID
+JOIN book ON rating.bID=book.bID
+WHERE rating.bID = 101;
 
 Question 4:
-
-
+SELECT name
+FROM reviewer
+WHERE rID IN
+(SELECT rID
+FROM rating
+WHERE ratingDate IS NULL);
 
 Question 5:
-
-
+SELECT reviewer.name,book.title,rating.ratings
+FROM book
+JOIN rating ON book.bID=rating.bID
+JOIN reviewer ON rating.rID=reviewer.rID
+WHERE reviewer.name=book.author;
 
 Question 6:
-
-
+SELECT reviewer.name AS `Reviewer Name`,book.title AS `Book Title`,rating.ratings AS `Ratings`,rating.ratingDate AS `Rating Date`
+FROM book
+JOIN rating ON book.bID=rating.bID
+JOIN reviewer ON rating.rID=reviewer.rID
+ORDER BY reviewer.name,book.title,rating.ratings;
 
 Question 7:
-
-
+SELECT rev.name,b.title
+FROM rating r1
+JOIN rating r2 ON r1.rID=r2.rID AND r1.bID=r2.bID
+JOIN reviewer rev ON rev.rID=r1.rID
+JOIN book b ON b.bID=r1.bID
+WHERE r1.ratings < r2.ratings AND r1.ratingDate < r2.ratingDate;
 
 Question 8:
-
-
+SELECT book.title AS `Title`,MAX(rating.ratings) AS `Max(Ratings)`
+FROM book
+JOIN rating ON book.bID=rating.bID
+GROUP BY book.bID
+ORDER BY `Title`;
 
 Question 9:
-
-
+SELECT book.title AS `Title`,
+(MAX(rating.ratings) - MIN(rating.ratings)) AS `Rating Spread`
+FROM book
+JOIN rating ON book.bID=rating.bID
+GROUP BY book.bID
+ORDER BY `Rating Spread` DESC, `Title`;
 
 Question 10:
-
-
+SELECT (AVG(`Pre1970`.`average`) - AVG(`Post1970`.`average`)) AS `Difference`
+FROM (
+	SELECT AVG(ratings) AS `average`
+	FROM book
+	JOIN rating ON book.bID=rating.bID
+	WHERE published < 1970
+	GROUP BY book.bID) AS `Pre1970`,(
+		SELECT AVG(ratings) AS `average`
+		FROM book
+		JOIN rating ON book.bID=rating.bID
+		WHERE published > 1970
+		GROUP BY book.bID) AS `Post1970`;
 
 Question 11:
-
-
+INSERT INTO reviewer
+VALUES(209, 'John Green');
 
 Question 12:
-
-
+INSERT INTO rating
+SELECT 202, bID, 5, NULL
+FROM book;
 
 Question 13:
-
-
+UPDATE Book
+SET published = published + 25
+WHERE bID IN (SELECT bID FROM (select Book.bID, avg(ratings) as
+avStars FROM Book JOIN Rating ON Book.bID=Rating.bID GROUP BY
+Book.bID) WHERE avStars >= 4);
 
 Question 14:
-
-
-
+DELETE FROM rating
+WHERE bID IN (
+SELECT bID
+FROM book
+WHERE published < 1970 OR published > 2000) AND ratings < 4;
